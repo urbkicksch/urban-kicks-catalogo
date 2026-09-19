@@ -81,6 +81,7 @@
   .product-category { font-size: 13px; color: var(--muted); }
   .product-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; margin-top: 2px; }
   .product-colorway { font-size: 13px; color: var(--muted); }
+  .product-price { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 19px; color: var(--accent); margin-top: 8px; }
   .size-label { font-size: 12px; color: var(--muted); margin-top: 14px; margin-bottom: 6px; }
   .size-row { display: flex; flex-wrap: wrap; gap: 6px; }
   .size-chip { border: 1px solid var(--line); background: var(--card); color: var(--ink); padding: 7px 0; width: 40px; text-align: center; font-size: 13px; cursor: pointer; }
@@ -226,6 +227,10 @@
       colorway.className = 'product-colorway';
       colorway.textContent = p.colorway;
 
+      var price = document.createElement('div');
+      price.className = 'product-price';
+      price.textContent = p.price;
+
       var sizeLabel = document.createElement('div');
       sizeLabel.className = 'size-label';
       sizeLabel.textContent = 'Talla (EU)';
@@ -272,6 +277,7 @@
       body.appendChild(cat);
       body.appendChild(title);
       body.appendChild(colorway);
+      body.appendChild(price);
       body.appendChild(sizeLabel);
       body.appendChild(sizeRow);
       body.appendChild(cta);
